@@ -35,11 +35,11 @@ app.use(passport.session());
 
 //Custom middleware
 
-app.use(function (req, res, next) {
+app.use(function(req,res,next){
     res.locals.isAuthenticated = req.isAuthenticated();
     res.locals.currentUser = req.user;
     next();
-});
+})
 
 //route setting
 app.use("/", require("./routes/home"));
